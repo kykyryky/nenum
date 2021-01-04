@@ -7,7 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'bundles')
+      rootPath: join(__dirname, 'bundles')
     })
   ],
   controllers: [AppController],
