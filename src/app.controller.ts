@@ -1,5 +1,9 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
+
+interface PersonDto {
+  date: Date
+}
 
 @Controller('api')
 export class AppController {
@@ -11,8 +15,8 @@ export class AppController {
   }
 
   @Post('matrix')
-  matrix(): number[][] {
-    return this.appService.getMatrix();
+  matrix(@Body() person: PersonDto): any {
+    return this.appService.getMatrix(person.date);
   }
 
   @Post('order')

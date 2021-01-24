@@ -6,9 +6,7 @@ export class AppService {
     return 'ping';
   }
 
-  getMatrix(d): any {
-    const date = new Date(d);
-
+  getMatrix(date: Date): any {
     const day = date.getDate().toString(10);
     const month = (date.getMonth() + 1).toString(10);
     const year = date.getFullYear().toString(10);
